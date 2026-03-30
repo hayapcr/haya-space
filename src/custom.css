@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(135deg, #fff5f7, #ffe4ec, #ffd6e7);
+  min-height: 100vh;
+}
+
+/* WRAPPER */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* CARD */
+.card {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+  padding: 35px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(255, 105, 180, 0.18);
+
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* TITLE */
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #d63384;
+  margin-bottom: 20px;
+}
+
+/* FOTO */
+.avatar-container {
+  margin: 20px 0;
+}
+
+.foto {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 5px solid #ffd6e7;
+
+  box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2);
+
+  transition: 0.3s;
+}
+
+.foto:hover {
+  transform: scale(1.05);
+}
+
+/* NAMA */
+.nama {
+  font-size: 28px;
+  font-weight: 700;
+  color: #c2185b;
+  margin-bottom: 8px;
+}
+
+/* PROGRAM STUDI */
+.program-studi {
+  color: #9c4777;
+  margin-bottom: 18px;
+  font-size: 15px;
+}
+
+/* SKILL */
+.skill-container {
+  margin: 18px 0;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ffc1d6, #ffd6e7);
+  padding: 8px 14px;
+  margin: 5px;
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+  color: #a61e4d;
+
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.12);
+}
+
+/* INFO CARD */
+.info-card {
+  background: #fff0f5;
+  padding: 18px;
+  border-radius: 18px;
+  margin-top: 15px;
+
+  box-shadow: 0 6px 18px rgba(255, 105, 180, 0.08);
+
+  color: #7a2948;
+  text-align: left;
+
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ABOUT / SECTION TITLE */
+.info-card h3 {
+  color: #d63384;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* TEXT INSIDE CARD */
+.info-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .card {
+    padding: 25px;
+    margin: 20px;
+  }
+
+  .foto {
+    width: 130px;
+    height: 130px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .nama {
+    font-size: 24px;
+  }
+}
