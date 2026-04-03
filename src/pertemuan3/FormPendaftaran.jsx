@@ -23,8 +23,8 @@ export default function FormPendaftaran() {
       newErrors.email = "Email harus ada @";
 
     if (!umur) newErrors.umur = "Umur wajib diisi";
-    else if (isNaN(umur))
-      newErrors.umur = "Umur harus angka";
+    else if (isNaN(umur) || umur <= 0)
+        newErrors.umur = "Umur harus angka positif";
 
     if (!jurusan)
       newErrors.jurusan = "Jurusan wajib dipilih";
@@ -45,8 +45,10 @@ export default function FormPendaftaran() {
 
   const isValid =
     nama &&
-    email &&
+    !/\d/.test(nama) &&
+    email.includes("@") &&
     umur &&
+    !isNaN(umur) &&
     jurusan &&
     kelas;
 
@@ -87,7 +89,7 @@ export default function FormPendaftaran() {
           label="Jurusan"
           value={jurusan}
           onChange={(e) => setJurusan(e.target.value)}
-          options={["Sistem Informasi", "Teknik Informatika", "Teknik Rekayasa Kommputer"]}
+          options={["Sistem Informasi", "Teknik Informatika", "Teknik Rekayasa Komputer"]}
           error={errors.jurusan}
         />
 
