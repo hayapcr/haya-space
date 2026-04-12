@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "destination": "Bali Beach",
+    "category": "Pantai",
+    "country": "Indonesia",
+    "price": 1500000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?random=1",
+    "location": {
+      "city": "Denpasar",
+      "province": "Bali",
+      "country": "Indonesia"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "18:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 2,
+    "destination": "Raja Ampat",
+    "category": "Pulau",
+    "country": "Indonesia",
+    "price": 3000000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?random=2",
+    "location": {
+      "city": "Sorong",
+      "province": "Papua",
+      "country": "Indonesia"
+    },
+    "schedule": {
+      "open": "07:00",
+      "close": "17:00",
+      "bestSeason": "Spring"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": false
+    }
+  },
+  {
+    "id": 3,
+    "destination": "Mount Bromo",
+    "category": "Gunung",
+    "country": "Indonesia",
+    "price": 1200000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?random=3",
+    "location": {
+      "city": "Malang",
+      "province": "Jawa Timur",
+      "country": "Indonesia"
+    },
+    "schedule": {
+      "open": "04:00",
+      "close": "16:00",
+      "bestSeason": "Winter"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 4,
+    "destination": "Borobudur",
+    "category": "Sejarah",
+    "country": "Indonesia",
+    "price": 500000,
+    "rating": 4.6,
+    "image": "https://picsum.photos/300/200?random=4",
+    "location": {
+      "city": "Magelang",
+      "province": "Jawa Tengah",
+      "country": "Indonesia"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "17:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 5,
+    "destination": "Labuan Bajo",
+    "category": "Pantai",
+    "country": "Indonesia",
+    "price": 2500000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?random=5",
+    "location": {
+      "city": "Manggarai",
+      "province": "NTT",
+      "country": "Indonesia"
+    },
+    "schedule": {
+      "open": "06:00",
+      "close": "18:00",
+      "bestSeason": "Spring"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 6,
+    "destination": "Sentosa Island",
+    "category": "Pulau",
+    "country": "Singapore",
+    "price": 2000000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?random=6",
+    "location": {
+      "city": "Singapore",
+      "province": "-",
+      "country": "Singapore"
+    },
+    "schedule": {
+      "open": "09:00",
+      "close": "20:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 7,
+    "destination": "Petronas Tower",
+    "category": "Kota",
+    "country": "Malaysia",
+    "price": 1800000,
+    "rating": 4.5,
+    "image": "https://picsum.photos/300/200?random=7",
+    "location": {
+      "city": "Kuala Lumpur",
+      "province": "-",
+      "country": "Malaysia"
+    },
+    "schedule": {
+      "open": "10:00",
+      "close": "22:00",
+      "bestSeason": "Autumn"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 8,
+    "destination": "Tokyo Tower",
+    "category": "Kota",
+    "country": "Japan",
+    "price": 5000000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?random=8",
+    "location": {
+      "city": "Tokyo",
+      "province": "-",
+      "country": "Japan"
+    },
+    "schedule": {
+      "open": "09:00",
+      "close": "21:00",
+      "bestSeason": "Winter"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 9,
+    "destination": "Mount Fuji",
+    "category": "Gunung",
+    "country": "Japan",
+    "price": 4500000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?random=9",
+    "location": {
+      "city": "Shizuoka",
+      "province": "-",
+      "country": "Japan"
+    },
+    "schedule": {
+      "open": "05:00",
+      "close": "17:00",
+      "bestSeason": "Spring"
+    },
+    "facilities": {
+      "hotel": false,
+      "transport": true,
+      "restaurant": false
+    }
+  },
+  {
+    "id": 10,
+    "destination": "Eiffel Tower",
+    "category": "Kota",
+    "country": "France",
+    "price": 7000000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?random=10",
+    "location": {
+      "city": "Paris",
+      "province": "-",
+      "country": "France"
+    },
+    "schedule": {
+      "open": "09:00",
+      "close": "23:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 11,
+    "destination": "Santorini",
+    "category": "Pantai",
+    "country": "Greece",
+    "price": 8000000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?random=11",
+    "location": {
+      "city": "Santorini",
+      "province": "-",
+      "country": "Greece"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "20:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 12,
+    "destination": "Great Wall",
+    "category": "Sejarah",
+    "country": "China",
+    "price": 6500000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?random=12",
+    "location": {
+      "city": "Beijing",
+      "province": "-",
+      "country": "China"
+    },
+    "schedule": {
+      "open": "07:00",
+      "close": "18:00",
+      "bestSeason": "Spring"
+    },
+    "facilities": {
+      "hotel": false,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 13,
+    "destination": "Sydney Opera House",
+    "category": "Kota",
+    "country": "Australia",
+    "price": 9000000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?random=13",
+    "location": {
+      "city": "Sydney",
+      "province": "-",
+      "country": "Australia"
+    },
+    "schedule": {
+      "open": "09:00",
+      "close": "22:00",
+      "bestSeason": "Autumn"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 14,
+    "destination": "Niagara Falls",
+    "category": "Air Terjun",
+    "country": "Canada",
+    "price": 8500000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?random=14",
+    "location": {
+      "city": "Ontario",
+      "province": "-",
+      "country": "Canada"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "19:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 15,
+    "destination": "Machu Picchu",
+    "category": "Sejarah",
+    "country": "Peru",
+    "price": 10000000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?random=15",
+    "location": {
+      "city": "Cusco",
+      "province": "-",
+      "country": "Peru"
+    },
+    "schedule": {
+      "open": "06:00",
+      "close": "17:00",
+      "bestSeason": "Spring"
+    },
+    "facilities": {
+      "hotel": false,
+      "transport": true,
+      "restaurant": false
+    }
+  },
+  {
+    "id": 16,
+    "destination": "Dubai Desert",
+    "category": "Gurun",
+    "country": "UAE",
+    "price": 7500000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?random=16",
+    "location": {
+      "city": "Dubai",
+      "province": "-",
+      "country": "UAE"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "18:00",
+      "bestSeason": "Winter"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 17,
+    "destination": "Phuket",
+    "category": "Pantai",
+    "country": "Thailand",
+    "price": 3500000,
+    "rating": 4.6,
+    "image": "https://picsum.photos/300/200?random=17",
+    "location": {
+      "city": "Phuket",
+      "province": "-",
+      "country": "Thailand"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "19:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 18,
+    "destination": "Jeju Island",
+    "category": "Pulau",
+    "country": "South Korea",
+    "price": 6000000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?random=18",
+    "location": {
+      "city": "Jeju",
+      "province": "-",
+      "country": "South Korea"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "18:00",
+      "bestSeason": "Spring"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 19,
+    "destination": "Swiss Alps",
+    "category": "Gunung",
+    "country": "Switzerland",
+    "price": 12000000,
+    "rating": 5.0,
+    "image": "https://picsum.photos/300/200?random=19",
+    "location": {
+      "city": "Zurich",
+      "province": "-",
+      "country": "Switzerland"
+    },
+    "schedule": {
+      "open": "06:00",
+      "close": "17:00",
+      "bestSeason": "Winter"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  },
+  {
+    "id": 20,
+    "destination": "Maldives",
+    "category": "Pantai",
+    "country": "Maldives",
+    "price": 15000000,
+    "rating": 5.0,
+    "image": "https://picsum.photos/300/200?random=20",
+    "location": {
+      "city": "Male",
+      "province": "-",
+      "country": "Maldives"
+    },
+    "schedule": {
+      "open": "08:00",
+      "close": "20:00",
+      "bestSeason": "Summer"
+    },
+    "facilities": {
+      "hotel": true,
+      "transport": true,
+      "restaurant": true
+    }
+  }
+]
