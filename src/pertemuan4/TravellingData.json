@@ -1,482 +1,392 @@
 [
   {
     "id": 1,
-    "destination": "Bali Beach",
-    "category": "Pantai",
-    "country": "Indonesia",
-    "price": 1500000,
+    "name": "Nasi Box Ayam Goreng",
+    "category": "Ayam",
+    "price": 20000,
     "rating": 4.8,
-    "image": "https://picsum.photos/300/200?random=1",
-    "location": {
-      "city": "Denpasar",
-      "province": "Bali",
-      "country": "Indonesia"
+    "image": "https://picsum.photos/300/200?food=1",
+    "detail": {
+      "menu": "Ayam goreng, nasi, sambal, lalapan",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "18:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 2,
-    "destination": "Raja Ampat",
-    "category": "Pulau",
-    "country": "Indonesia",
-    "price": 3000000,
-    "rating": 4.9,
-    "image": "https://picsum.photos/300/200?random=2",
-    "location": {
-      "city": "Sorong",
-      "province": "Papua",
-      "country": "Indonesia"
+    "name": "Nasi Box Ayam Bakar",
+    "category": "Ayam",
+    "price": 22000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?food=2",
+    "detail": {
+      "menu": "Ayam bakar, nasi, sambal kecap",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "07:00",
-      "close": "17:00",
-      "bestSeason": "Spring"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": false
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 3,
-    "destination": "Mount Bromo",
-    "category": "Gunung",
-    "country": "Indonesia",
-    "price": 1200000,
+    "name": "Nasi Box Ikan Bakar",
+    "category": "Ikan",
+    "price": 25000,
     "rating": 4.7,
-    "image": "https://picsum.photos/300/200?random=3",
-    "location": {
-      "city": "Malang",
-      "province": "Jawa Timur",
-      "country": "Indonesia"
+    "image": "https://picsum.photos/300/200?food=3",
+    "detail": {
+      "menu": "Ikan bakar, nasi, sambal",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "04:00",
-      "close": "16:00",
-      "bestSeason": "Winter"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 4,
-    "destination": "Borobudur",
-    "category": "Sejarah",
-    "country": "Indonesia",
-    "price": 500000,
+    "name": "Nasi Box Ikan Goreng",
+    "category": "Ikan",
+    "price": 23000,
     "rating": 4.6,
-    "image": "https://picsum.photos/300/200?random=4",
-    "location": {
-      "city": "Magelang",
-      "province": "Jawa Tengah",
-      "country": "Indonesia"
+    "image": "https://picsum.photos/300/200?food=4",
+    "detail": {
+      "menu": "Ikan goreng, nasi, lalapan",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "17:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 5,
-    "destination": "Labuan Bajo",
-    "category": "Pantai",
-    "country": "Indonesia",
-    "price": 2500000,
+    "name": "Nasi Box Rendang",
+    "category": "Daging",
+    "price": 30000,
     "rating": 4.9,
-    "image": "https://picsum.photos/300/200?random=5",
-    "location": {
-      "city": "Manggarai",
-      "province": "NTT",
-      "country": "Indonesia"
+    "image": "https://picsum.photos/300/200?food=5",
+    "detail": {
+      "menu": "Rendang sapi, nasi, sayur",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "06:00",
-      "close": "18:00",
-      "bestSeason": "Spring"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 6,
-    "destination": "Sentosa Island",
-    "category": "Pulau",
-    "country": "Singapore",
-    "price": 2000000,
-    "rating": 4.7,
-    "image": "https://picsum.photos/300/200?random=6",
-    "location": {
-      "city": "Singapore",
-      "province": "-",
-      "country": "Singapore"
+    "name": "Nasi Box Daging Balado",
+    "category": "Daging",
+    "price": 28000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?food=6",
+    "detail": {
+      "menu": "Daging balado, nasi, sambal",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "09:00",
-      "close": "20:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 7,
-    "destination": "Petronas Tower",
-    "category": "Kota",
-    "country": "Malaysia",
-    "price": 1800000,
-    "rating": 4.5,
-    "image": "https://picsum.photos/300/200?random=7",
-    "location": {
-      "city": "Kuala Lumpur",
-      "province": "-",
-      "country": "Malaysia"
+    "name": "Nasi Box Ayam Geprek",
+    "category": "Ayam",
+    "price": 21000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?food=7",
+    "detail": {
+      "menu": "Ayam geprek, nasi, sambal pedas",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "10:00",
-      "close": "22:00",
-      "bestSeason": "Autumn"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 8,
-    "destination": "Tokyo Tower",
-    "category": "Kota",
-    "country": "Japan",
-    "price": 5000000,
-    "rating": 4.8,
-    "image": "https://picsum.photos/300/200?random=8",
-    "location": {
-      "city": "Tokyo",
-      "province": "-",
-      "country": "Japan"
+    "name": "Nasi Box Lele Goreng",
+    "category": "Ikan",
+    "price": 19000,
+    "rating": 4.5,
+    "image": "https://picsum.photos/300/200?food=8",
+    "detail": {
+      "menu": "Lele goreng, nasi, sambal",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "09:00",
-      "close": "21:00",
-      "bestSeason": "Winter"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 9,
-    "destination": "Mount Fuji",
-    "category": "Gunung",
-    "country": "Japan",
-    "price": 4500000,
-    "rating": 4.9,
-    "image": "https://picsum.photos/300/200?random=9",
-    "location": {
-      "city": "Shizuoka",
-      "province": "-",
-      "country": "Japan"
+    "name": "Nasi Box Ayam Teriyaki",
+    "category": "Ayam",
+    "price": 25000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?food=9",
+    "detail": {
+      "menu": "Ayam teriyaki, nasi, sayur",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "05:00",
-      "close": "17:00",
-      "bestSeason": "Spring"
-    },
-    "facilities": {
-      "hotel": false,
-      "transport": true,
-      "restaurant": false
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 10,
-    "destination": "Eiffel Tower",
-    "category": "Kota",
-    "country": "France",
-    "price": 7000000,
-    "rating": 4.9,
-    "image": "https://picsum.photos/300/200?random=10",
-    "location": {
-      "city": "Paris",
-      "province": "-",
-      "country": "France"
+    "name": "Nasi Box Ayam Katsu",
+    "category": "Ayam",
+    "price": 26000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?food=10",
+    "detail": {
+      "menu": "Ayam katsu, nasi, saus",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "09:00",
-      "close": "23:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 11,
-    "destination": "Santorini",
-    "category": "Pantai",
-    "country": "Greece",
-    "price": 8000000,
-    "rating": 4.8,
-    "image": "https://picsum.photos/300/200?random=11",
-    "location": {
-      "city": "Santorini",
-      "province": "-",
-      "country": "Greece"
+    "name": "Nasi Box Udang Saus",
+    "category": "Seafood",
+    "price": 32000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?food=11",
+    "detail": {
+      "menu": "Udang saus tiram, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "20:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 12,
-    "destination": "Great Wall",
-    "category": "Sejarah",
-    "country": "China",
-    "price": 6500000,
+    "name": "Nasi Box Cumi Goreng",
+    "category": "Seafood",
+    "price": 30000,
     "rating": 4.7,
-    "image": "https://picsum.photos/300/200?random=12",
-    "location": {
-      "city": "Beijing",
-      "province": "-",
-      "country": "China"
+    "image": "https://picsum.photos/300/200?food=12",
+    "detail": {
+      "menu": "Cumi goreng, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "07:00",
-      "close": "18:00",
-      "bestSeason": "Spring"
-    },
-    "facilities": {
-      "hotel": false,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 13,
-    "destination": "Sydney Opera House",
-    "category": "Kota",
-    "country": "Australia",
-    "price": 9000000,
-    "rating": 4.8,
-    "image": "https://picsum.photos/300/200?random=13",
-    "location": {
-      "city": "Sydney",
-      "province": "-",
-      "country": "Australia"
+    "name": "Nasi Box Ayam Rica",
+    "category": "Ayam",
+    "price": 24000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?food=13",
+    "detail": {
+      "menu": "Ayam rica, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "09:00",
-      "close": "22:00",
-      "bestSeason": "Autumn"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 14,
-    "destination": "Niagara Falls",
-    "category": "Air Terjun",
-    "country": "Canada",
-    "price": 8500000,
-    "rating": 4.9,
-    "image": "https://picsum.photos/300/200?random=14",
-    "location": {
-      "city": "Ontario",
-      "province": "-",
-      "country": "Canada"
+    "name": "Nasi Box Telur Balado",
+    "category": "Telur",
+    "price": 15000,
+    "rating": 4.5,
+    "image": "https://picsum.photos/300/200?food=14",
+    "detail": {
+      "menu": "Telur balado, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "19:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 15,
-    "destination": "Machu Picchu",
-    "category": "Sejarah",
-    "country": "Peru",
-    "price": 10000000,
-    "rating": 4.9,
-    "image": "https://picsum.photos/300/200?random=15",
-    "location": {
-      "city": "Cusco",
-      "province": "-",
-      "country": "Peru"
+    "name": "Nasi Box Tempe Orek",
+    "category": "Vegetarian",
+    "price": 14000,
+    "rating": 4.4,
+    "image": "https://picsum.photos/300/200?food=15",
+    "detail": {
+      "menu": "Tempe orek, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "06:00",
-      "close": "17:00",
-      "bestSeason": "Spring"
-    },
-    "facilities": {
-      "hotel": false,
-      "transport": true,
-      "restaurant": false
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 16,
-    "destination": "Dubai Desert",
-    "category": "Gurun",
-    "country": "UAE",
-    "price": 7500000,
-    "rating": 4.7,
-    "image": "https://picsum.photos/300/200?random=16",
-    "location": {
-      "city": "Dubai",
-      "province": "-",
-      "country": "UAE"
+    "name": "Nasi Box Tahu Goreng",
+    "category": "Vegetarian",
+    "price": 13000,
+    "rating": 4.3,
+    "image": "https://picsum.photos/300/200?food=16",
+    "detail": {
+      "menu": "Tahu goreng, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "18:00",
-      "bestSeason": "Winter"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 17,
-    "destination": "Phuket",
-    "category": "Pantai",
-    "country": "Thailand",
-    "price": 3500000,
-    "rating": 4.6,
-    "image": "https://picsum.photos/300/200?random=17",
-    "location": {
-      "city": "Phuket",
-      "province": "-",
-      "country": "Thailand"
+    "name": "Nasi Box Sate Ayam",
+    "category": "Ayam",
+    "price": 27000,
+    "rating": 4.9,
+    "image": "https://picsum.photos/300/200?food=17",
+    "detail": {
+      "menu": "Sate ayam, lontong",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "19:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 18,
-    "destination": "Jeju Island",
-    "category": "Pulau",
-    "country": "South Korea",
-    "price": 6000000,
-    "rating": 4.8,
-    "image": "https://picsum.photos/300/200?random=18",
-    "location": {
-      "city": "Jeju",
-      "province": "-",
-      "country": "South Korea"
+    "name": "Nasi Box Soto Ayam",
+    "category": "Ayam",
+    "price": 22000,
+    "rating": 4.6,
+    "image": "https://picsum.photos/300/200?food=18",
+    "detail": {
+      "menu": "Soto ayam, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "18:00",
-      "bestSeason": "Spring"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 19,
-    "destination": "Swiss Alps",
-    "category": "Gunung",
-    "country": "Switzerland",
-    "price": 12000000,
-    "rating": 5.0,
-    "image": "https://picsum.photos/300/200?random=19",
-    "location": {
-      "city": "Zurich",
-      "province": "-",
-      "country": "Switzerland"
+    "name": "Nasi Box Rawon",
+    "category": "Daging",
+    "price": 30000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?food=19",
+    "detail": {
+      "menu": "Rawon daging, nasi",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "06:00",
-      "close": "17:00",
-      "bestSeason": "Winter"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   },
   {
     "id": 20,
-    "destination": "Maldives",
-    "category": "Pantai",
-    "country": "Maldives",
-    "price": 15000000,
+    "name": "Nasi Box Sop Ayam",
+    "category": "Ayam",
+    "price": 23000,
+    "rating": 4.6,
+    "image": "https://picsum.photos/300/200?food=20",
+    "detail": {
+      "menu": "Sop ayam, nasi",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 21,
+    "name": "Nasi Box Bakso",
+    "category": "Daging",
+    "price": 20000,
+    "rating": 4.5,
+    "image": "https://picsum.photos/300/200?food=21",
+    "detail": {
+      "menu": "Bakso, mie",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 22,
+    "name": "Nasi Box Mie Goreng",
+    "category": "Mie",
+    "price": 18000,
+    "rating": 4.5,
+    "image": "https://picsum.photos/300/200?food=22",
+    "detail": {
+      "menu": "Mie goreng spesial",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 23,
+    "name": "Nasi Box Nasi Goreng",
+    "category": "Nasi",
+    "price": 19000,
+    "rating": 4.6,
+    "image": "https://picsum.photos/300/200?food=23",
+    "detail": {
+      "menu": "Nasi goreng spesial",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 24,
+    "name": "Nasi Box Capcay",
+    "category": "Sayur",
+    "price": 20000,
+    "rating": 4.5,
+    "image": "https://picsum.photos/300/200?food=24",
+    "detail": {
+      "menu": "Capcay sayur + nasi",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 25,
+    "name": "Nasi Box Ayam Mentega",
+    "category": "Ayam",
+    "price": 26000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?food=25",
+    "detail": {
+      "menu": "Ayam mentega + nasi",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 26,
+    "name": "Nasi Box Ayam Asam Manis",
+    "category": "Ayam",
+    "price": 25000,
+    "rating": 4.6,
+    "image": "https://picsum.photos/300/200?food=26",
+    "detail": {
+      "menu": "Ayam asam manis + nasi",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 27,
+    "name": "Nasi Box Ayam Lada Hitam",
+    "category": "Ayam",
+    "price": 26000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?food=27",
+    "detail": {
+      "menu": "Ayam lada hitam + nasi",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 28,
+    "name": "Nasi Box Udang Goreng Tepung",
+    "category": "Seafood",
+    "price": 32000,
+    "rating": 4.8,
+    "image": "https://picsum.photos/300/200?food=28",
+    "detail": {
+      "menu": "Udang goreng tepung + nasi",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 29,
+    "name": "Nasi Box Cumi Saus Padang",
+    "category": "Seafood",
+    "price": 31000,
+    "rating": 4.7,
+    "image": "https://picsum.photos/300/200?food=29",
+    "detail": {
+      "menu": "Cumi saus padang + nasi",
+      "portion": "1 orang"
+    },
+    "availability": { "ready": true, "delivery": true }
+  },
+  {
+    "id": 30,
+    "name": "Nasi Box Paket Komplit",
+    "category": "Paket",
+    "price": 35000,
     "rating": 5.0,
-    "image": "https://picsum.photos/300/200?random=20",
-    "location": {
-      "city": "Male",
-      "province": "-",
-      "country": "Maldives"
+    "image": "https://picsum.photos/300/200?food=30",
+    "detail": {
+      "menu": "Ayam, telur, tempe, nasi, sayur",
+      "portion": "1 orang"
     },
-    "schedule": {
-      "open": "08:00",
-      "close": "20:00",
-      "bestSeason": "Summer"
-    },
-    "facilities": {
-      "hotel": true,
-      "transport": true,
-      "restaurant": true
-    }
+    "availability": { "ready": true, "delivery": true }
   }
 ]
