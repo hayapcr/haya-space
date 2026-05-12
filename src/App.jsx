@@ -6,16 +6,15 @@ import AuthLayout from "./layouts/AuthLayout";
 import NotFound from "./pages/NotFound";
 import Loading from "./components/Loading";
 
-// LAZY MAIN
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Menu = lazy(() => import("./pages/Menu"));
 const Cart = lazy(() => import("./pages/Cart"));
 const Orders = lazy(() => import("./pages/Orders")); 
-
-// LAZY AUTH
 const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
 const Forgot = lazy(() => import("./pages/auth/Forgot"));
+const MenuDetail = lazy(() => import("./pages/MenuDetail"));
+const OrdersDetail = lazy(() => import("./pages/OrdersDetail"));
 
 function App() {
   return (
@@ -32,6 +31,8 @@ function App() {
             <Route path="cart" element={<Cart />} />
             <Route path="*" element={<NotFound />} />
             <Route path="orders" element={<Orders />} />
+            <Route path="menu/:id" element={<MenuDetail />} />
+            <Route path="orders/:id" element={<OrdersDetail />} />
           </Route>
 
           <Route element={<AuthLayout />}>
