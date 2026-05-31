@@ -16,7 +16,7 @@ export default function Sidebar() {
     }`;
 
   return (
-    <aside className="w-80 h-screen fixed top-0 left-0 bg-[#FFFFFF] border-r border-[#F3F4F6] p-8 flex flex-col relative overflow-hidden font-['Poppins'] z-50">
+    <aside className="fixed left-0 top-0 z-50 flex h-screen w-80 flex-col overflow-hidden border-r border-[#F3F4F6] bg-white p-8 font-['Poppins']">
 
       {/* BACKGROUND ACCENTS */}
       <div className="absolute top-[-10%] right-[-20%] w-64 h-64 bg-[#F8B602]/20 rounded-full blur-[100px] -z-10"></div>
