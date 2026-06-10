@@ -1,13 +1,23 @@
+import { useRef, useEffect } from "react";
+
 export default function SearchFilter({
   search,
   setSearch,
   category,
   setCategory,
 }) {
+
+  const searchRef = useRef(null);
+
+  useEffect(() => {
+    searchRef.current.focus();
+  }, []);
+
   return (
     <div className="bg-white p-5 rounded-2xl shadow mb-6 grid md:grid-cols-2 gap-4">
 
       <input
+        ref={searchRef}
         type="text"
         placeholder="Cari menu..."
         value={search}

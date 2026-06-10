@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import data from "../data/menuData.json";
 
@@ -29,13 +29,17 @@ import {
 
 // Icon components untuk mempercantik UI
 const InfoIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-600"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-600"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
 );
 
 export default function Menu() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [sort, setSort] = useState("default");
+
+  useEffect(() => {
+    console.log("Halaman Menu berhasil dibuka");
+  }, []);
 
   const filteredData = data
     .filter((item) => {
@@ -68,7 +72,7 @@ export default function Menu() {
       ) : (
         <div className="col-span-full rounded-[2.5rem] border-2 border-dashed border-gray-200 bg-white/50 p-16 text-center backdrop-blur-sm">
           <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100 text-gray-400">
-             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
           </div>
           <h2 className="mb-2 text-2xl font-bold text-gray-800">Menu Tidak Ditemukan</h2>
           <p className="text-gray-500">Coba gunakan kata kunci lain atau pilih kategori berbeda.</p>
@@ -80,7 +84,7 @@ export default function Menu() {
   return (
     <Container>
       <div className="relative min-h-screen w-full overflow-hidden bg-[#F8F9FA] p-4 font-['Poppins'] md:p-6 lg:p-10">
-        
+
         {/* BACKGROUND ORNAMENTS */}
         <div className="absolute right-[-10%] top-[-10%] -z-10 h-[600px] w-[600px] rounded-full bg-orange-200/30 blur-[120px]" />
         <div className="absolute bottom-[-10%] left-[-10%] -z-10 h-[500px] w-[500px] rounded-full bg-yellow-100/30 blur-[120px]" />
@@ -114,7 +118,7 @@ export default function Menu() {
             className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl bg-zinc-900 px-8 py-4 text-sm font-bold text-white transition-all hover:bg-orange-600 active:scale-95 shadow-2xl shadow-zinc-200"
           >
             <span>Back to Dashboard</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:translate-x-1"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
           </Link>
         </div>
 
