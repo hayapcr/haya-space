@@ -15,6 +15,9 @@ const Register = lazy(() => import("./pages/auth/Register"));
 const Forgot = lazy(() => import("./pages/auth/Forgot"));
 const MenuDetail = lazy(() => import("./pages/MenuDetail"));
 const OrdersDetail = lazy(() => import("./pages/OrdersDetail"));
+const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
+const PasswordChanged = lazy(() => import("./pages/auth/PasswordChanged")); 
+const Users = lazy(() => import("./pages/Users")); 
 
 function App() {
   return (
@@ -33,12 +36,15 @@ function App() {
             <Route path="orders" element={<Orders />} />
             <Route path="menu/:id" element={<MenuDetail />} />
             <Route path="orders/:id" element={<OrdersDetail />} />
+            <Route path="users" element={<Users />} />
           </Route>
 
           <Route element={<AuthLayout />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/forgot" element={<Forgot />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route path="/password-changed" element={<PasswordChanged />} />
           </Route>
 
         </Routes>

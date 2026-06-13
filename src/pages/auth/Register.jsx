@@ -1,104 +1,172 @@
 import { useState } from "react";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
+import { Mail, LockKeyhole, User } from "lucide-react";
+import { usersAPI } from "../../services/usersAPI";
 
 export default function Register() {
+  const navigate = useNavigate();
+  const { AuthIllustration } = useOutletContext();
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const [form, setForm] = useState({
+    name: "",
     email: "",
     password: "",
     confirmPassword: "",
   });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Register berhasil 🍽️");
+    setLoading(true);
+    setError("");
+
+    try {
+      if (form.password !== form.confirmPassword) {
+        setError("Password dan Confirm Password tidak sama");
+        return;
+      }
+
+      await usersAPI.createUser({
+        name: form.name,
+        email: form.email,
+        password: form.password,
+        role: "user",
+      });
+
+      alert("Pendaftaran berhasil, silakan login");
+      navigate("/login");
+    } catch (err) {
+  console.log("ERROR REGISTER:", err);
+  console.log("ERROR RESPONSE:", err.response?.data);
+
+  setError(
+    err.response?.data?.message ||
+    err.response?.data?.details ||
+    err.message ||
+    "Pendaftaran gagal"
+  );
+} finally {
+  setLoading(false);
+}
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-[#E7E5E3] overflow-hidden font-['Poppins'] px-6">
+    <div className="flex h-[350px] w-full max-w-[940px] bg-white">
+      <AuthIllustration />
 
-      <div className="w-full max-w-5xl bg-white rounded-[10px] shadow-lg grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+      <div className="flex w-full items-center justify-center md:w-1/2">
+        <div className="w-[285px]">
+          <h1 className="mb-5 text-[24px] font-extrabold">Registration</h1>
 
-        {/* LEFT SECTION */}
-        <div className="hidden md:flex items-center justify-center p-10 bg-[#F8F6F5] relative">
-          
+          {error && (
+            <div className="mb-3 rounded bg-red-50 px-3 py-2 text-xs text-red-600">
+              {error}
+            </div>
+          )}
 
-          <div className="text-center text-[#8F4738] font-semibold text-xl">
-            Join Our Catering System 🍽️
-          </div>
-        </div>
+          <form onSubmit={handleSubmit}>
+            <div className="relative mb-3">
+              <User
+                size={14}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
+              />
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                value={form.name}
+                onChange={handleChange}
+                disabled={loading}
+                required
+                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
+              />
+            </div>
 
-        
-
-        {/* RIGHT FORM SECTION */}
-        <div className="p-10 md:p-14">
-
-          <div className="flex justify-center gap-10 mb-10 text-sm font-semibold">
-            <button className="text-[#8F4738] border-b-2 border-[#8F4738] pb-1">
-              Sign Up
-            </button>
-
-            <button className="text-[#B7B7B7] hover:text-[#8F4738] transition">
-              Sign In
-            </button>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-5">
-
-            <div>
-              <label className="block text-[12px] font-medium text-[#8F4738] mb-2">
-                Email *
-              </label>
-
+            <div className="relative mb-3">
+              <Mail
+                size={14}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
+              />
               <input
                 type="email"
                 name="email"
+                placeholder="Email Address"
+                value={form.email}
                 onChange={handleChange}
-                className="w-full border border-[#D7C8C3] px-4 py-2.5 text-sm outline-none focus:border-[#8F4738] transition bg-white"
+                disabled={loading}
+                required
+                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
               />
             </div>
 
-            <div>
-              <label className="block text-[12px] font-medium text-[#8F4738] mb-2">
-                Password *
-              </label>
-
+            <div className="relative mb-3">
+              <LockKeyhole
+                size={14}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
+              />
               <input
                 type="password"
                 name="password"
+                placeholder="Password"
+                value={form.password}
                 onChange={handleChange}
-                className="w-full border border-[#D7C8C3] px-4 py-2.5 text-sm outline-none focus:border-[#8F4738] transition bg-white"
+                disabled={loading}
+                required
+                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
               />
             </div>
 
-            <div>
-              <label className="block text-[12px] font-medium text-[#8F4738] mb-2">
-                Confirm Password *
-              </label>
-
+            <div className="relative mb-4">
+              <LockKeyhole
+                size={14}
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
+              />
               <input
                 type="password"
                 name="confirmPassword"
+                placeholder="Confirm Password"
+                value={form.confirmPassword}
                 onChange={handleChange}
-                className="w-full border border-[#D7C8C3] px-4 py-2.5 text-sm outline-none focus:border-[#8F4738] transition bg-white"
+                disabled={loading}
+                required
+                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
               />
             </div>
 
+            <p className="mb-4 text-[10px] leading-4 text-[#555]">
+              By signing below, you agree to the{" "}
+              <span className="font-semibold text-[#ff7a1a]">Term of use</span>
+              <br />
+              and{" "}
+              <span className="font-semibold text-[#ff7a1a]">
+                privacy notice
+              </span>
+            </p>
+
             <button
               type="submit"
-              className="w-full bg-[#8F4738] text-white py-3 text-sm font-semibold tracking-wide hover:bg-[#7A3D30] transition-all"
+              disabled={loading}
+              className="h-[38px] w-full rounded-[4px] bg-[#ff7a1a] text-[11px] font-bold text-white disabled:opacity-60"
             >
-              REGISTER
+              {loading ? "Loading..." : "Sign Up"}
             </button>
-
           </form>
 
-          <p className="mt-8 text-[10px] text-[#A3A3A3] text-center">
-            By creating an account, you agree to Terms of Use and Privacy Policy.
+          <p className="mt-4 text-center text-[10px] text-[#777]">
+            Already have an account?{" "}
+            <Link to="/login" className="font-semibold text-[#ff7a1a]">
+              Login
+            </Link>
           </p>
-
         </div>
       </div>
     </div>

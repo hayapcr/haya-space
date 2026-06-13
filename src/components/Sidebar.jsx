@@ -5,14 +5,14 @@ import {
   FaShoppingCart,
   FaClipboardList,
   FaSignOutAlt,
+  FaUsers,
 } from "react-icons/fa";
 
 export default function Sidebar() {
   const linkClass = ({ isActive }) =>
-    `flex items-center gap-4 px-6 py-4 rounded-[2rem] font-semibold font-['Poppins'] transition-all duration-500 group relative overflow-hidden ${
-      isActive
-        ? "bg-[#F8B602] text-white shadow-[0_20px_50px_-15px_rgba(248,182,2,0.35)] scale-[1.03] z-10"
-        : "text-[#6B7280] hover:text-[#F8B602] hover:bg-[#FFF8E1]"
+    `flex items-center gap-4 px-6 py-4 rounded-[2rem] font-semibold font-['Poppins'] transition-all duration-500 group relative overflow-hidden ${isActive
+      ? "bg-[#F8B602] text-white shadow-[0_20px_50px_-15px_rgba(248,182,2,0.35)] scale-[1.03] z-10"
+      : "text-[#6B7280] hover:text-[#F8B602] hover:bg-[#FFF8E1]"
     }`;
 
   return (
@@ -80,6 +80,13 @@ export default function Sidebar() {
             <FaClipboardList className="text-xl" />
             <span className="tracking-tight text-sm">History Log</span>
           </NavLink>
+
+          <NavLink to="/users" className={linkClass}>
+            <FaUsers className="text-xl" />
+            <span className="tracking-tight text-sm">Users</span>
+          </NavLink>
+
+
 
         </nav>
       </div>

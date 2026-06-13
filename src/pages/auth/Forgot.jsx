@@ -1,50 +1,38 @@
+import { Link, useOutletContext } from "react-router-dom";
+import { Mail } from "lucide-react";
+
 export default function Forgot() {
+  const { AuthIllustration } = useOutletContext();
+
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-orange-50 overflow-hidden p-4">
+    <div className="flex h-[350px] w-full max-w-[940px] bg-white">
+      <AuthIllustration />
 
-      <div className="max-w-md w-full bg-white p-8 rounded-2xl shadow-xl shadow-orange-100/50">
+      <div className="flex w-full items-center justify-center md:w-1/2">
+        <div className="w-[285px]">
+          <h1 className="mb-4 text-[24px] font-extrabold">Forget Password</h1>
 
-        {/* TITLE */}
-        <h2 className="text-3xl font-bold text-center text-slate-800">
-          Lupa Password?
-        </h2>
+          <p className="mb-7 text-[11px] leading-4 text-[#555]">
+            Please enter your email address below
+            <br />
+            you will receive a verification link
+          </p>
 
-        <p className="text-center text-slate-500 mt-2 mb-8 text-sm">
-          Masukkan email kamu untuk mendapatkan link reset password
-        </p>
-
-        {/* FORM */}
-        <form className="space-y-4">
-
-          <div>
-            <label className="block text-sm font-semibold text-slate-700 mb-1 ml-1">
-              Email
-            </label>
-
+          <div className="relative mb-20">
+            <Mail size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]" />
             <input
               type="email"
-              placeholder="Masukkan email"
-              className="w-full p-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-orange-500 outline-none transition-all"
+              placeholder="Email Address"
+              className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-orange-500 text-white py-3 rounded-xl font-bold hover:bg-orange-600 active:scale-[0.98] transition-all shadow-lg shadow-orange-200"
-          >
-            Kirim Link Reset
-          </button>
-
-        </form>
-
-        {/* BACK TO LOGIN */}
-        <p className="text-center text-sm text-slate-400 mt-6">
-          Ingat password?{" "}
-          <span className="text-orange-500 font-semibold cursor-pointer hover:underline">
-            Login kembali
-          </span>
-        </p>
-
+          <Link to="/password-changed">
+            <button className="h-[38px] w-full rounded-[4px] bg-[#ff7a1a] text-[11px] font-bold text-white">
+              Continue
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
