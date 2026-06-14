@@ -34,14 +34,17 @@ export default function Login() {
       );
 
       if (users.length === 0) {
-        setError("Email atau password salah");
+        alert("Akun belum terdaftar, silakan registrasi terlebih dahulu");
+        navigate("/register");
         return;
       }
 
       localStorage.setItem("user", JSON.stringify(users[0]));
-      navigate("/");
+
+      navigate("/dashboard");
     } catch (err) {
-      setError("Terjadi kesalahan saat login");
+      alert("Akun belum terdaftar, silakan registrasi terlebih dahulu");
+      navigate("/register");
     } finally {
       setLoading(false);
     }

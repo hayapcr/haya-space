@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   FaHome,
   FaUtensils,
@@ -6,14 +6,22 @@ import {
   FaClipboardList,
   FaSignOutAlt,
   FaUsers,
+  FaBullhorn,
 } from "react-icons/fa";
 
 export default function Sidebar() {
+  const navigate = useNavigate();
+
   const linkClass = ({ isActive }) =>
     `flex items-center gap-4 px-6 py-4 rounded-[2rem] font-semibold font-['Poppins'] transition-all duration-500 group relative overflow-hidden ${isActive
       ? "bg-[#F8B602] text-white shadow-[0_20px_50px_-15px_rgba(248,182,2,0.35)] scale-[1.03] z-10"
       : "text-[#6B7280] hover:text-[#F8B602] hover:bg-[#FFF8E1]"
     }`;
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   return (
     <aside className="fixed left-0 top-0 z-50 flex h-screen w-80 flex-col overflow-hidden border-r border-[#F3F4F6] bg-white p-8 font-['Poppins']">
@@ -52,7 +60,7 @@ export default function Sidebar() {
 
         <nav className="flex flex-col gap-3">
 
-          <NavLink to="/" className={linkClass}>
+          <NavLink to="/dashboard" className={linkClass}>
             <FaHome className="text-xl" />
             <span className="tracking-tight text-sm">Dashboard</span>
 
@@ -79,6 +87,11 @@ export default function Sidebar() {
           <NavLink to="/orders" className={linkClass}>
             <FaClipboardList className="text-xl" />
             <span className="tracking-tight text-sm">History Log</span>
+          </NavLink>
+
+          <NavLink to="/campaign-promo" className={linkClass}>
+            <FaBullhorn className="text-xl" />
+            <span className="tracking-tight text-sm">Campaign Promo</span>
           </NavLink>
 
           <NavLink to="/users" className={linkClass}>
@@ -118,7 +131,10 @@ export default function Sidebar() {
         </div>
 
         {/* LOGOUT */}
-        <button className="flex items-center justify-center gap-3 w-full mt-6 py-3 text-[#6B7280] hover:text-[#EF4444] font-medium text-xs transition-colors group">
+        <button
+          onClick={handleLogout}
+          className="flex items-center justify-center gap-3 w-full mt-6 py-3 text-[#6B7280] hover:text-[#EF4444] font-medium text-xs transition-colors group"
+        >
           <FaSignOutAlt className="group-hover:-translate-x-1 transition-transform" />
           Sign Out Account
         </button>
