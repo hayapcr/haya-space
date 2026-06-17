@@ -19,6 +19,7 @@ const ResetPassword = lazy(() => import("./pages/auth/ResetPassword"));
 const PasswordChanged = lazy(() => import("./pages/auth/PasswordChanged"));
 const Users = lazy(() => import("./pages/Users"));
 const CampaignPromo = lazy(() => import("./pages/CampaignPromo"));
+const Membership = lazy(() => import("./pages/Membership"));
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="users" element={<Users />} />
             <Route path="*" element={<NotFound />} />
             <Route path="campaign-promo" element={<CampaignPromo />} />
+            <Route path="membership" element={<Membership />} />
           </Route>
 
           <Route element={<AuthLayout />}>

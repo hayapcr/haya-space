@@ -7,15 +7,23 @@ import {
   FaSignOutAlt,
   FaUsers,
   FaBullhorn,
+  FaCrown,
+  FaComments,
+  FaTags,
+  FaBoxOpen,
+  FaTruck,
+  FaCog,
+  FaShieldAlt,
 } from "react-icons/fa";
 
 export default function Sidebar() {
   const navigate = useNavigate();
 
   const linkClass = ({ isActive }) =>
-    `flex items-center gap-4 px-6 py-4 rounded-[2rem] font-semibold font-['Poppins'] transition-all duration-500 group relative overflow-hidden ${isActive
-      ? "bg-[#F8B602] text-white shadow-[0_20px_50px_-15px_rgba(248,182,2,0.35)] scale-[1.03] z-10"
-      : "text-[#6B7280] hover:text-[#F8B602] hover:bg-[#FFF8E1]"
+    `flex items-center justify-between px-5 py-3 rounded-[1.5rem] font-semibold font-['Poppins'] transition-all duration-300 ${
+      isActive
+        ? "bg-[#F8B602] text-white shadow-lg shadow-[#F8B602]/25"
+        : "text-[#6B7280] hover:text-[#F8B602] hover:bg-[#FFF8E1]"
     }`;
 
   const handleLogout = () => {
@@ -23,123 +31,163 @@ export default function Sidebar() {
     navigate("/login");
   };
 
+  const SectionTitle = ({ children }) => (
+    <p className="mt-8 mb-3 px-3 text-[10px] font-bold uppercase tracking-[0.45em] text-[#9CA3AF]">
+      {children}
+    </p>
+  );
+
+  const Badge = ({ children }) => (
+    <span className="rounded-full bg-[#FFF8E1] px-2 py-1 text-[9px] font-black text-[#F8B602]">
+      {children}
+    </span>
+  );
+
   return (
-    <aside className="fixed left-0 top-0 z-50 flex h-screen w-80 flex-col overflow-hidden border-r border-[#F3F4F6] bg-white p-8 font-['Poppins']">
-
-      {/* BACKGROUND ACCENTS */}
-      <div className="absolute top-[-10%] right-[-20%] w-64 h-64 bg-[#F8B602]/20 rounded-full blur-[100px] -z-10"></div>
-
-      <div className="absolute bottom-[-10%] left-[-20%] w-64 h-64 bg-[#FFCC00]/10 rounded-full blur-[100px] -z-10"></div>
-
-      {/* LOGO SECTION */}
-      <div className="flex items-center gap-4 mb-14 px-2 group cursor-pointer">
+    <aside className="fixed left-0 top-0 z-50 flex h-screen w-80 flex-col overflow-y-auto border-r border-[#F3F4F6] bg-white px-6 py-7 font-['Poppins']">
+      {/* LOGO */}
+      <div className="mb-10 flex items-center gap-4">
         <div className="relative">
-          <div className="w-14 h-14 bg-gradient-to-tr from-[#F8B602] to-[#FFCC00] rounded-[1.5rem] flex items-center justify-center shadow-xl shadow-[#F8B602]/20 rotate-3 group-hover:rotate-0 transition-transform duration-500">
-            <FaUtensils className="text-white text-2xl -rotate-3 group-hover:rotate-0 transition-transform duration-500" />
+          <div className="flex h-14 w-14 items-center justify-center rounded-[1.5rem] bg-gradient-to-tr from-[#F8B602] to-[#FFCC00] text-white shadow-xl">
+            <FaUtensils className="text-2xl" />
           </div>
-
-          <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-[#22C55E] border-4 border-white rounded-full"></div>
+          <div className="absolute -bottom-1 -right-1 h-5 w-5 rounded-full border-4 border-white bg-[#22C55E]" />
         </div>
 
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-[#1F2937] leading-none">
-            CATER<span className="text-[#F8B602] italic">BOX</span>
+          <h1 className="text-2xl font-bold leading-none text-[#1F2937]">
+            CATER<span className="italic text-[#F8B602]">BOX</span>
           </h1>
-
-          <p className="text-[10px] font-medium text-[#9CA3AF] uppercase tracking-[0.3em] mt-1">
+          <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.3em] text-[#9CA3AF]">
             Partner Portal
           </p>
         </div>
       </div>
 
-      {/* NAVIGATION SECTION */}
-      <div className="space-y-2 flex-1">
-        <p className="text-[10px] font-semibold text-[#9CA3AF] uppercase tracking-[0.4em] mb-6 px-4">
-          Overview
-        </p>
+      <nav className="flex-1">
+        <SectionTitle>Utama</SectionTitle>
 
-        <nav className="flex flex-col gap-3">
+        <NavLink to="/dashboard" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaHome />
+            Dashboard
+          </span>
+        </NavLink>
 
-          <NavLink to="/dashboard" className={linkClass}>
-            <FaHome className="text-xl" />
-            <span className="tracking-tight text-sm">Dashboard</span>
+        <SectionTitle>CRM & Pemasaran</SectionTitle>
 
-            <div className="absolute right-0 w-1.5 h-8 bg-white rounded-l-full opacity-0 group-[.active]:opacity-100 transition-opacity"></div>
-          </NavLink>
+        <NavLink to="/crm" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaShieldAlt />
+            CRM Center
+          </span>
+        </NavLink>
 
-          <NavLink to="/menu" className={linkClass}>
-            <FaUtensils className="text-xl" />
-            <span className="tracking-tight text-sm">Food Catalog</span>
-          </NavLink>
+        <NavLink to="/users" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaUsers />
+            Customer CRM
+          </span>
+        </NavLink>
 
-          <NavLink to="/cart" className={linkClass}>
-            <div className="relative">
-              <FaShoppingCart className="text-xl" />
+        <NavLink to="/membership" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaCrown />
+            Membership
+          </span>
+          <Badge>LOYAL</Badge>
+        </NavLink>
 
-              <span className="absolute -top-2 -right-2 w-5 h-5 bg-[#FFCC00] text-[10px] text-white flex items-center justify-center rounded-full border-2 border-[#FFFFFF] font-semibold group-[.active]:bg-white group-[.active]:text-[#F8B602] transition-colors">
-                3
-              </span>
-            </div>
+        <NavLink to="/campaign-promo" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaBullhorn />
+            Campaign Promo
+          </span>
+          <Badge>NEW</Badge>
+        </NavLink>
 
-            <span className="tracking-tight text-sm">My Orders</span>
-          </NavLink>
+        <NavLink to="/feedback" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaComments />
+            Feedback
+          </span>
+        </NavLink>
 
-          <NavLink to="/orders" className={linkClass}>
-            <FaClipboardList className="text-xl" />
-            <span className="tracking-tight text-sm">History Log</span>
-          </NavLink>
+        <NavLink to="/program-sale" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaTags />
+            Program Sale
+          </span>
+          <Badge>50%</Badge>
+        </NavLink>
 
-          <NavLink to="/campaign-promo" className={linkClass}>
-            <FaBullhorn className="text-xl" />
-            <span className="tracking-tight text-sm">Campaign Promo</span>
-          </NavLink>
+        <SectionTitle>Menu & Produk</SectionTitle>
 
-          <NavLink to="/users" className={linkClass}>
-            <FaUsers className="text-xl" />
-            <span className="tracking-tight text-sm">Users</span>
-          </NavLink>
+        <NavLink to="/menu" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaUtensils />
+            Food Catalog
+          </span>
+        </NavLink>
 
+        <NavLink to="/paket-catering" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaBoxOpen />
+            Paket Catering
+          </span>
+          <Badge>VIP</Badge>
+        </NavLink>
 
+        <NavLink to="/stock" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaBoxOpen />
+            Stock Bahan
+          </span>
+        </NavLink>
 
-        </nav>
-      </div>
+        <NavLink to="/supplier" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaTruck />
+            Data Supplier
+          </span>
+        </NavLink>
 
-      {/* FOOTER SECTION */}
-      <div className="mt-auto">
-        <div className="relative bg-[#1F2937] rounded-[2.5rem] p-7 overflow-hidden group shadow-2xl shadow-[#F3F4F6]">
+        <SectionTitle>Transaksi Catering</SectionTitle>
 
-          {/* Glow Effect */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#F8B602]/20 rounded-full blur-3xl group-hover:bg-[#F8B602]/40 transition-all duration-700"></div>
+        <NavLink to="/cart" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaShoppingCart />
+            Pesanan Masuk
+          </span>
+          <Badge>3</Badge>
+        </NavLink>
 
-          <div className="relative z-10">
-            <div className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center mb-4 border border-white/10">
-              <span className="text-white text-lg">✨</span>
-            </div>
+        <NavLink to="/orders" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaClipboardList />
+            Riwayat Pesanan
+          </span>
+        </NavLink>
 
-            <p className="text-white font-bold text-sm tracking-tight">
-              CaterBox Premium
-            </p>
+        <SectionTitle>Sistem & Otentikasi</SectionTitle>
 
-            <p className="text-[#D1D5DB] text-[10px] font-medium mt-1 mb-5">
-              Unlock 24/7 Priority Support
-            </p>
+        <NavLink to="/settings" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaCog />
+            Pengaturan
+          </span>
+        </NavLink>
+      </nav>
 
-            <button className="w-full py-3 bg-[#F8B602] hover:bg-[#FFCC00] text-white rounded-[1.2rem] text-[10px] font-semibold uppercase tracking-widest transition-all duration-300 shadow-lg">
-              Upgrade Now
-            </button>
-          </div>
-        </div>
-
-        {/* LOGOUT */}
+      <div className="mt-8 border-t border-slate-200 pt-5">
         <button
           onClick={handleLogout}
-          className="flex items-center justify-center gap-3 w-full mt-6 py-3 text-[#6B7280] hover:text-[#EF4444] font-medium text-xs transition-colors group"
+          className="flex w-full items-center gap-3 rounded-2xl px-5 py-3 text-sm font-semibold text-[#EF4444] hover:bg-red-50"
         >
-          <FaSignOutAlt className="group-hover:-translate-x-1 transition-transform" />
-          Sign Out Account
+          <FaSignOutAlt />
+          Keluar Portal
         </button>
       </div>
-
     </aside>
   );
 }
