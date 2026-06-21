@@ -5,6 +5,11 @@ import MainLayout from "./layouts/MainLayout";
 import AuthLayout from "./layouts/AuthLayout";
 import NotFound from "./pages/NotFound";
 import Loading from "./components/Loading";
+import GuestLayout from "./layouts/GuestLayout";
+import MemberLayout from "./layouts/MemberLayout";
+
+const Landing = lazy(() => import("./pages/guest/Landing"));
+const CompanyProfile = lazy(() => import("./pages/guest/CompanyProfile"));
 
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Menu = lazy(() => import("./pages/Menu"));
@@ -21,6 +26,10 @@ const Users = lazy(() => import("./pages/Users"));
 const CampaignPromo = lazy(() => import("./pages/CampaignPromo"));
 const Membership = lazy(() => import("./pages/Membership"));
 
+const MemberHome = lazy(() => import("./pages/member/MemberHome"));
+const MemberOrders = lazy(() => import("./pages/member/MemberOrders"));
+const MemberPromo = lazy(() => import("./pages/member/MemberPromo"));
+
 function App() {
   return (
     <BrowserRouter>
@@ -29,6 +38,11 @@ function App() {
       <Suspense fallback={<Loading />}>
 
         <Routes>
+
+          <Route path="/" element={<GuestLayout />}>
+            <Route index element={<Landing />} />
+            <Route path="company-profile" element={<CompanyProfile />} />
+          </Route>
 
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Navigate to="/login" replace />} />
@@ -50,6 +64,12 @@ function App() {
             <Route path="/forgot" element={<Forgot />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/password-changed" element={<PasswordChanged />} />
+          </Route>
+
+          <Route path="/member" element={<MemberLayout />}>
+            <Route index element={<MemberHome />} />
+            <Route path="orders" element={<MemberOrders />} />
+            <Route path="promo" element={<MemberPromo />} />
           </Route>
 
         </Routes>

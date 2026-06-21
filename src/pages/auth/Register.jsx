@@ -15,6 +15,7 @@ export default function Register() {
     email: "",
     password: "",
     confirmPassword: "",
+    role: "member",
   });
 
   const handleChange = (e) => {
@@ -39,24 +40,24 @@ export default function Register() {
         name: form.name,
         email: form.email,
         password: form.password,
-        role: "user",
+        role: form.role,
       });
 
       alert("Pendaftaran berhasil, silakan login");
       navigate("/login");
     } catch (err) {
-  console.log("ERROR REGISTER:", err);
-  console.log("ERROR RESPONSE:", err.response?.data);
+      console.log("ERROR REGISTER:", err);
+      console.log("ERROR RESPONSE:", err.response?.data);
 
-  setError(
-    err.response?.data?.message ||
-    err.response?.data?.details ||
-    err.message ||
-    "Pendaftaran gagal"
-  );
-} finally {
-  setLoading(false);
-}
+      setError(
+        err.response?.data?.message ||
+          err.response?.data?.details ||
+          err.message ||
+          "Pendaftaran gagal"
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -125,7 +126,7 @@ export default function Register() {
               />
             </div>
 
-            <div className="relative mb-4">
+            <div className="relative mb-3">
               <LockKeyhole
                 size={14}
                 className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
@@ -141,6 +142,17 @@ export default function Register() {
                 className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
               />
             </div>
+
+            <select
+              name="role"
+              value={form.role}
+              onChange={handleChange}
+              disabled={loading}
+              className="mb-4 h-[38px] w-full rounded-[3px] border border-[#eeeeee] px-3 text-[11px] outline-none focus:border-[#ff7a1a]"
+            >
+              <option value="member">Member</option>
+              <option value="admin">Admin</option>
+            </select>
 
             <p className="mb-4 text-[10px] leading-4 text-[#555]">
               By signing below, you agree to the{" "}

@@ -13,6 +13,7 @@ export default function Login() {
   const [dataForm, setDataForm] = useState({
     email: "",
     password: "",
+    role: "member",
   });
 
   const handleChange = (e) => {
@@ -30,7 +31,8 @@ export default function Login() {
     try {
       const users = await usersAPI.loginUser(
         dataForm.email,
-        dataForm.password
+        dataForm.password,
+        dataForm.role
       );
 
       if (users.length === 0) {
@@ -39,9 +41,15 @@ export default function Login() {
         return;
       }
 
-      localStorage.setItem("user", JSON.stringify(users[0]));
+      const user = users[0];
 
-      navigate("/dashboard");
+      localStorage.setItem("user", JSON.stringify(user));
+
+      if (user.role === "admin") {
+        navigate("/admin/dashboard");
+      } else {
+        navigate("/member");
+      }
     } catch (err) {
       alert("Akun belum terdaftar, silakan registrasi terlebih dahulu");
       navigate("/register");
@@ -86,7 +94,7 @@ export default function Login() {
                 />
               </div>
 
-              <div className="relative mb-2">
+              <div className="relative mb-3">
                 <LockKeyhole
                   size={14}
                   className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
@@ -103,6 +111,17 @@ export default function Login() {
                   className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
                 />
               </div>
+
+              <select
+                name="role"
+                value={dataForm.role}
+                onChange={handleChange}
+                disabled={loading}
+                className="mb-4 h-[38px] w-full rounded-[3px] border border-[#eeeeee] px-3 text-[11px] outline-none focus:border-[#ff7a1a]"
+              >
+                <option value="member">Member</option>
+                <option value="admin">Admin</option>
+              </select>
 
               <div className="mb-7 text-right">
                 <Link
