@@ -44,11 +44,12 @@ export const usersAPI = {
     return response.data;
   },
 
-  async loginUser(email, password, role) {
+  async loginUser(email, password) {
     const response = await axios.get(
-      `${API_URL}?email=eq.${email}&password=eq.${password}&role=eq.${role}`,
+      `${API_URL}?email=eq.${email}&password=eq.${password}`,
       { headers }
     );
+
     return response.data;
   },
 };

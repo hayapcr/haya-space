@@ -13,7 +13,6 @@ export default function Login() {
   const [dataForm, setDataForm] = useState({
     email: "",
     password: "",
-    role: "member",
   });
 
   const handleChange = (e) => {
@@ -31,13 +30,11 @@ export default function Login() {
     try {
       const users = await usersAPI.loginUser(
         dataForm.email,
-        dataForm.password,
-        dataForm.role
+        dataForm.password
       );
 
-      if (users.length === 0) {
-        alert("Akun belum terdaftar, silakan registrasi terlebih dahulu");
-        navigate("/register");
+      if (!users || users.length === 0) {
+        setError("Email atau password salah. Silakan registrasi terlebih dahulu.");
         return;
       }
 
@@ -46,13 +43,15 @@ export default function Login() {
       localStorage.setItem("user", JSON.stringify(user));
 
       if (user.role === "admin") {
-        navigate("/admin/dashboard");
-      } else {
+        navigate("/dashboard");
+      } else if (user.role === "member") {
         navigate("/member");
+      } else {
+        setError("Role akun tidak valid. Periksa data role di Supabase.");
       }
     } catch (err) {
-      alert("Akun belum terdaftar, silakan registrasi terlebih dahulu");
-      navigate("/register");
+      console.log("ERROR LOGIN:", err);
+      setError("Terjadi kesalahan saat login.");
     } finally {
       setLoading(false);
     }
@@ -94,7 +93,7 @@ export default function Login() {
                 />
               </div>
 
-              <div className="relative mb-3">
+              <div className="relative mb-2">
                 <LockKeyhole
                   size={14}
                   className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
@@ -111,17 +110,6 @@ export default function Login() {
                   className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
                 />
               </div>
-
-              <select
-                name="role"
-                value={dataForm.role}
-                onChange={handleChange}
-                disabled={loading}
-                className="mb-4 h-[38px] w-full rounded-[3px] border border-[#eeeeee] px-3 text-[11px] outline-none focus:border-[#ff7a1a]"
-              >
-                <option value="member">Member</option>
-                <option value="admin">Admin</option>
-              </select>
 
               <div className="mb-7 text-right">
                 <Link
