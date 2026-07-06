@@ -13,7 +13,7 @@ export default function MainLayout() {
 
       <Sidebar />
 
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col pl-80">
 
         <Header
           search={search}

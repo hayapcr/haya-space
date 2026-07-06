@@ -26,6 +26,17 @@ const Users = lazy(() => import("./pages/Users"));
 const CampaignPromo = lazy(() => import("./pages/CampaignPromo"));
 const Membership = lazy(() => import("./pages/Membership"));
 
+// New pages
+const CRM = lazy(() => import("./pages/CRM"));
+const CustomerDetail = lazy(() => import("./pages/CustomerDetail"));
+const Feedback = lazy(() => import("./pages/Feedback"));
+const ProgramSale = lazy(() => import("./pages/ProgramSale"));
+const Stock = lazy(() => import("./pages/Stock"));
+const Supplier = lazy(() => import("./pages/Supplier"));
+const Laporan = lazy(() => import("./pages/Laporan"));
+const Settings = lazy(() => import("./pages/Settings"));
+const PaketCatering = lazy(() => import("./pages/PaketCatering"));
+
 const MemberHome = lazy(() => import("./pages/member/MemberHome"));
 const MemberOrders = lazy(() => import("./pages/member/MemberOrders"));
 const MemberPromo = lazy(() => import("./pages/member/MemberPromo"));
@@ -47,15 +58,24 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Navigate to="/login" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
+            <Route path="crm" element={<CRM />} />
             <Route path="menu" element={<Menu />} />
             <Route path="cart" element={<Cart />} />
             <Route path="orders" element={<Orders />} />
             <Route path="menu/:id" element={<MenuDetail />} />
             <Route path="orders/:id" element={<OrdersDetail />} />
             <Route path="users" element={<Users />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="customers/:id" element={<CustomerDetail />} />
             <Route path="campaign-promo" element={<CampaignPromo />} />
             <Route path="membership" element={<Membership />} />
+            <Route path="feedback" element={<Feedback />} />
+            <Route path="program-sale" element={<ProgramSale />} />
+            <Route path="stock" element={<Stock />} />
+            <Route path="supplier" element={<Supplier />} />
+            <Route path="laporan" element={<Laporan />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="paket-catering" element={<PaketCatering />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
 
           <Route element={<AuthLayout />}>

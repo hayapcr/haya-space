@@ -14,6 +14,7 @@ import {
   FaTruck,
   FaCog,
   FaShieldAlt,
+  FaChartLine,
 } from "react-icons/fa";
 
 export default function Sidebar() {
@@ -166,6 +167,13 @@ export default function Sidebar() {
           <span className="flex items-center gap-3">
             <FaClipboardList />
             Riwayat Pesanan
+          </span>
+        </NavLink>
+
+        <NavLink to="/laporan" className={linkClass}>
+          <span className="flex items-center gap-3">
+            <FaChartLine />
+            Laporan Bisnis
           </span>
         </NavLink>
 

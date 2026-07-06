@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
-import { Mail, LockKeyhole, User } from "lucide-react";
+import { Mail, LockKeyhole, User, Award, ArrowRight } from "lucide-react";
 import { usersAPI } from "../../services/usersAPI";
 
 export default function Register() {
@@ -32,7 +32,8 @@ export default function Register() {
 
     try {
       if (form.password !== form.confirmPassword) {
-        setError("Password dan Confirm Password tidak sama");
+        setError("Password dan konfirmasi password tidak cocok.");
+        setLoading(false);
         return;
       }
 
@@ -43,17 +44,14 @@ export default function Register() {
         role: form.role,
       });
 
-      alert("Pendaftaran berhasil, silakan login");
+      alert("Registrasi berhasil! Silakan login.");
       navigate("/login");
     } catch (err) {
-      console.log("ERROR REGISTER:", err);
-      console.log("ERROR RESPONSE:", err.response?.data);
-
       setError(
         err.response?.data?.message ||
-          err.response?.data?.details ||
-          err.message ||
-          "Pendaftaran gagal"
+        err.response?.data?.details ||
+        err.message ||
+        "Gagal melakukan pendaftaran."
       );
     } finally {
       setLoading(false);
@@ -61,122 +59,102 @@ export default function Register() {
   };
 
   return (
-    <div className="flex h-[350px] w-full max-w-[940px] bg-white">
+    <div className="flex w-full max-w-[960px] bg-white rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 font-['Poppins'] min-h-[560px]">
       <AuthIllustration />
 
-      <div className="flex w-full items-center justify-center md:w-1/2">
-        <div className="w-[285px]">
-          <h1 className="mb-5 text-[24px] font-extrabold">Registration</h1>
+      <div className="flex w-full items-center justify-center md:w-1/2 p-8 sm:p-12">
+        <div className="w-full max-w-[340px] space-y-6">
+          
+          {/* Title */}
+          <div>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-orange-50 text-[#ff7a1a] text-[10px] font-black uppercase tracking-wider rounded-full mb-3">
+              ✦ JOIN US
+            </span>
+            <h1 className="text-3xl font-black text-[#1F2937] tracking-tight">
+              Create <span className="text-[#ff7a1a] italic">Account.</span>
+            </h1>
+            <p className="text-xs text-slate-400 mt-1">Daftar sekarang untuk nikmati layanan catering terbaik.</p>
+          </div>
 
           {error && (
-            <div className="mb-3 rounded bg-red-50 px-3 py-2 text-xs text-red-600">
-              {error}
+            <div className="rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 px-4 py-3 text-xs font-semibold">
+              ⚠️ {error}
             </div>
           )}
 
-          <form onSubmit={handleSubmit}>
-            <div className="relative mb-3">
-              <User
-                size={14}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
-              />
+          <form onSubmit={handleSubmit} className="space-y-4">
+            
+            {/* Name */}
+            <div className="relative">
+              <User size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                value={form.name}
-                onChange={handleChange}
-                disabled={loading}
-                required
-                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
+                type="text" name="name" placeholder="Nama Lengkap"
+                value={form.name} onChange={handleChange} disabled={loading} required
+                className="w-full h-12 rounded-2xl border border-slate-200 pl-11 pr-4 text-xs outline-none focus:border-[#ff7a1a] focus:ring-4 focus:ring-orange-50 transition"
               />
             </div>
 
-            <div className="relative mb-3">
-              <Mail
-                size={14}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
-              />
+            {/* Email */}
+            <div className="relative">
+              <Mail size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
-                type="email"
-                name="email"
-                placeholder="Email Address"
-                value={form.email}
-                onChange={handleChange}
-                disabled={loading}
-                required
-                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
+                type="email" name="email" placeholder="Alamat Email"
+                value={form.email} onChange={handleChange} disabled={loading} required
+                className="w-full h-12 rounded-2xl border border-slate-200 pl-11 pr-4 text-xs outline-none focus:border-[#ff7a1a] focus:ring-4 focus:ring-orange-50 transition"
               />
             </div>
 
-            <div className="relative mb-3">
-              <LockKeyhole
-                size={14}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
-              />
+            {/* Password */}
+            <div className="relative">
+              <LockKeyhole size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={form.password}
-                onChange={handleChange}
-                disabled={loading}
-                required
-                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
+                type="password" name="password" placeholder="Password"
+                value={form.password} onChange={handleChange} disabled={loading} required
+                className="w-full h-12 rounded-2xl border border-slate-200 pl-11 pr-4 text-xs outline-none focus:border-[#ff7a1a] focus:ring-4 focus:ring-orange-50 transition"
               />
             </div>
 
-            <div className="relative mb-3">
-              <LockKeyhole
-                size={14}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-[#ff7a1a]"
-              />
+            {/* Confirm Password */}
+            <div className="relative">
+              <LockKeyhole size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
-                type="password"
-                name="confirmPassword"
-                placeholder="Confirm Password"
-                value={form.confirmPassword}
-                onChange={handleChange}
-                disabled={loading}
-                required
-                className="h-[38px] w-full rounded-[3px] border border-[#eeeeee] pl-9 pr-3 text-[11px] outline-none focus:border-[#ff7a1a]"
+                type="password" name="confirmPassword" placeholder="Konfirmasi Password"
+                value={form.confirmPassword} onChange={handleChange} disabled={loading} required
+                className="w-full h-12 rounded-2xl border border-slate-200 pl-11 pr-4 text-xs outline-none focus:border-[#ff7a1a] focus:ring-4 focus:ring-orange-50 transition"
               />
             </div>
 
-            <select
-              name="role"
-              value={form.role}
-              onChange={handleChange}
-              disabled={loading}
-              className="mb-4 h-[38px] w-full rounded-[3px] border border-[#eeeeee] px-3 text-[11px] outline-none focus:border-[#ff7a1a]"
-            >
-              <option value="member">Member</option>
-              <option value="admin">Admin</option>
-            </select>
+            {/* Role selection */}
+            <div className="relative">
+              <Award size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
+              <select
+                name="role" value={form.role} onChange={handleChange} disabled={loading}
+                className="w-full h-12 rounded-2xl border border-slate-200 pl-11 pr-4 text-xs outline-none focus:border-[#ff7a1a] transition bg-white cursor-pointer"
+              >
+                <option value="member">Daftar sebagai Member</option>
+                <option value="admin">Daftar sebagai Admin / Staff</option>
+              </select>
+            </div>
 
-            <p className="mb-4 text-[10px] leading-4 text-[#555]">
-              By signing below, you agree to the{" "}
-              <span className="font-semibold text-[#ff7a1a]">Term of use</span>
-              <br />
-              and{" "}
-              <span className="font-semibold text-[#ff7a1a]">
-                privacy notice
-              </span>
+            {/* Terms info */}
+            <p className="text-[10px] leading-relaxed text-slate-400">
+              Dengan mendaftar, Anda menyetujui <span className="font-bold text-[#ff7a1a] cursor-pointer hover:underline">Ketentuan Penggunaan</span> & <span className="font-bold text-[#ff7a1a] cursor-pointer hover:underline">Kebijakan Privasi</span> CaterBox.
             </p>
 
+            {/* Submit Button */}
             <button
-              type="submit"
-              disabled={loading}
-              className="h-[38px] w-full rounded-[4px] bg-[#ff7a1a] text-[11px] font-bold text-white disabled:opacity-60"
+              type="submit" disabled={loading}
+              className="w-full h-12 rounded-2xl bg-[#ff7a1a] hover:bg-[#e86a0a] text-white text-xs font-black uppercase tracking-wider transition shadow-lg shadow-orange-500/10 flex items-center justify-center gap-2 disabled:opacity-60"
             >
-              {loading ? "Loading..." : "Sign Up"}
+              {loading ? "Memproses..." : <><Award size={14} /> Daftar Sekarang</>}
             </button>
           </form>
 
-          <p className="mt-4 text-center text-[10px] text-[#777]">
-            Already have an account?{" "}
-            <Link to="/login" className="font-semibold text-[#ff7a1a]">
-              Login
+          {/* Login Link */}
+          <p className="text-center text-xs text-slate-400">
+            Sudah punya akun?{" "}
+            <Link to="/login" className="font-bold text-[#ff7a1a] hover:underline flex items-center justify-center gap-1 mt-1">
+              Login disini <ArrowRight size={12} />
             </Link>
           </p>
         </div>
